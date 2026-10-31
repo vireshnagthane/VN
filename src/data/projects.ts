@@ -58,12 +58,13 @@ export const projectsData: Project[] = [
   },
   {
     id: "kalpana-dental",
-    title: "Kalpana Dental Clinic Website",
+    title: "Kalpana Multispeciality Dental Hospital",
     slug: "kalpana-dental",
     category: "Web Development",
     shortDescription: "A full-stack healthcare web platform featuring clinic treatments, patient stories, doctor profiles, and direct WhatsApp-integrated appointment enquiry.",
     extendedDescription: "A modern healthcare platform designed for Kalpana Multispeciality Dental Hospital. It features a complete treatment showcase, doctor credentials, patient testimonials, educational dental care guides, and an administrative dashboard for appointment enquiry management.",
     thumbnail: "/projects/kalpana-dental.png",
+    liveUrl: "https://kalpana-multispeciality-dental-hosp.vercel.app/",
     githubUrl: "https://github.com/vireshnagthane",
     technologies: ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "Supabase"],
     keyFeatures: [
@@ -73,7 +74,7 @@ export const projectsData: Project[] = [
       "Supabase backend for appointment request collection",
       "Lighthouse-optimized mobile-first responsive design"
     ],
-    status: "Functional Prototype",
+    status: "Live Production",
     featured: true,
   },
   {
@@ -144,7 +145,7 @@ export const projectsData: Project[] = [
     shortDescription: "A lightweight digital learning management system enabling students to track coursework, plan study tasks, and explore educational curriculum.",
     extendedDescription: "A modern, minimalist LMS developed to streamline academic planning and study tracking. Provides students with interactive course showcases, task management, study planner tracking, and responsive contact sections deployed live on Vercel.",
     thumbnail: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1200&q=80",
-    liveUrl: "https://studentlearningmanagementsystem-c668rg5zu.vercel.app/",
+    liveUrl: "https://studentlearningmanagementsystem-sigma.vercel.app/",
     githubUrl: "https://github.com/vireshnagthane/SEMD-LMS-SYSTEM",
     technologies: ["JavaScript", "HTML5", "CSS3", "DOM API", "Vercel"],
     keyFeatures: [
