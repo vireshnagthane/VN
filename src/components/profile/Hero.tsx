@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
     <div className="relative w-full">
       {/* Banner & Avatar Container */}
       <div className="relative mb-5 sm:mb-6 z-20">
-        <div className="relative overflow-hidden rounded-2xl w-full aspect-[2/1] sm:aspect-[2.4/1] min-h-36 sm:min-h-48 md:min-h-52 bg-zinc-950 border border-black/8 dark:border-white/10 shadow-sm">
+        <div className="relative overflow-hidden rounded-2xl w-full h-32 sm:h-40 md:h-44 bg-[#0d0b0a] border border-black/8 dark:border-white/10 shadow-sm">
           <img
             alt="Profile Banner"
             src={profileData.bannerUrl}
@@ -35,8 +35,8 @@ export const Hero: React.FC = () => {
         </div>
         
         {/* Overlapping Avatar */}
-        <div className="absolute -bottom-8 sm:-bottom-10 left-4 sm:left-8 z-30">
-          <div className="relative w-20 h-20 sm:w-28 sm:h-28 rounded-2xl overflow-hidden border-[3px] sm:border-4 shadow-xl border-white bg-white dark:border-black ring-1 ring-black/5 dark:ring-white/10 group">
+        <div className="absolute -bottom-7 sm:-bottom-9 left-4 sm:left-7 z-30">
+          <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden border-[3px] sm:border-4 shadow-xl border-white bg-white dark:border-black ring-1 ring-black/5 dark:ring-white/10 group">
             <img
               alt={profileData.name}
               src={profileData.avatarUrl}
@@ -54,7 +54,7 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* Hero Profile Card */}
-      <div className="relative z-10 rounded-2xl border p-4 sm:p-8 pt-11 sm:pt-12 bg-white/60 border-black/8 dark:bg-white/[0.02] dark:border-white/[0.08] backdrop-blur-sm shadow-xs">
+      <div className="relative z-10 rounded-2xl border p-4 sm:p-7 pt-10 sm:pt-11 bg-white/60 border-black/8 dark:bg-white/[0.02] dark:border-white/[0.08] backdrop-blur-sm shadow-xs">
         {/* Header with Name & Verified Icon */}
         <div className="mb-3.5 flex items-center justify-between">
           <div>

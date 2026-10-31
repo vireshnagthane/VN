@@ -50,7 +50,7 @@ export const profileData: ProfileData = {
   location: "Udgir / Kopargaon, Maharashtra, India",
   careerGoal: "Aspiring Cloud Engineer",
   avatarUrl: "/viresh.jpg",
-  bannerUrl: "/assets/profile-banner.jpg",
+  bannerUrl: "/assets/profile-banner.png",
   resumeUrl: "/resume/viresh-nagthane-resume.pdf",
   resumeAvailable: true,
   verified: true,
