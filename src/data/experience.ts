@@ -1,19 +1,55 @@
 export interface MilestoneItem {
   id: string;
-  category: 'Education' | 'Projects & Building' | 'Data Science' | 'Cloud & Systems';
+  category: 'Education' | 'Projects & Building' | 'Data Science' | 'Cloud & Systems' | 'Leadership & Media' | 'Certifications';
   title: string;
   role: string;
   organization: string;
   period: string;
   duration: string;
   location: string;
-  type: 'Degree Program' | 'Hands-on Building' | 'Technical Milestone' | 'Self-Directed Learning';
+  type: 'Degree Program' | 'Hands-on Building' | 'Technical Milestone' | 'Self-Directed Learning' | 'Campus Leadership' | 'Certification';
   summary: string;
   detailedPoints: string[];
   skills: string[];
 }
 
 export const journeyMilestones: MilestoneItem[] = [
+  {
+    id: "iste-techfest",
+    category: "Leadership & Media",
+    title: "ISTE National Level TechFest",
+    role: "Social Media Handler & Digital Lead",
+    organization: "Indian Society for Technical Education (ISTE) Student Chapter",
+    period: "Jan 2025 – Present",
+    duration: "Ongoing",
+    location: "Kopargaon, Maharashtra",
+    type: "Campus Leadership",
+    summary: "Managing end-to-end digital outreach, event publicity, and social media channels for the premier National Level Technical Festival organized at Sanjivani College of Engineering.",
+    detailedPoints: [
+      "Orchestrated cross-platform social media campaigns, designing high-impact banners, promo reels, and schedule announcements to drive student engagement.",
+      "Spearheaded attendee registration drives across engineering institutions in Maharashtra, resulting in widespread participation.",
+      "Coordinated with student organizing committees, faculty leads, and event speakers to ensure real-time event updates and highlight reels."
+    ],
+    skills: ["Social Media Strategy", "Digital Marketing", "Content Creation", "Graphic Design", "Event Promotion", "Team Leadership"]
+  },
+  {
+    id: "cisco-networking",
+    category: "Certifications",
+    title: "Cisco Networking Academy",
+    role: "Networking Basics Virtual Trainee",
+    organization: "NetAcad Cisco Virtual",
+    period: "Jan 2026 – Apr 2026",
+    duration: "4 Months",
+    location: "Virtual / Online",
+    type: "Certification",
+    summary: "Completed rigorous coursework and practical labs covering enterprise network architecture, protocols, IP subnetting, switching, and routing foundations.",
+    detailedPoints: [
+      "Studied OSI and TCP/IP protocol stacks, IPv4 / IPv6 addressing structures, and Classless Inter-Domain Routing (CIDR).",
+      "Gained hands-on proficiency in network topology design, packet switching, router configuration, and gateway routing.",
+      "Conducted packet diagnostics and network troubleshooting using simulation tools including Cisco Packet Tracer."
+    ],
+    skills: ["Computer Networks", "Cisco NetAcad", "IPv4 / IPv6", "TCP/IP & UDP", "Subnetting", "Routing & Switching", "Network Security"]
+  },
   {
     id: "sanjivani-journey",
     category: "Education",
@@ -26,7 +62,7 @@ export const journeyMilestones: MilestoneItem[] = [
     type: "Degree Program",
     summary: "Pursuing Bachelor's in Information Technology with a strong focus on Data Structures, Database Systems, Computer Networks, and Cloud Infrastructure fundamentals.",
     detailedPoints: [
-      "Maintaining consistent academic performance with current 7.3 CGPA.",
+      "Maintaining consistent academic performance with current 7.30 CGPA.",
       "Engaged in university lab coursework covering Operating Systems, DBMS schema modeling, and OOP paradigms in Java and C++.",
       "Collaborating on engineering team projects and technical seminar presentations."
     ],

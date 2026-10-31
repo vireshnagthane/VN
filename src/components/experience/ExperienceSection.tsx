@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Briefcase, GraduationCap, Code2, Cloud } from 'lucide-react';
+import { ChevronDown, ChevronUp, Briefcase, GraduationCap, Code2, Cloud, Users, Award } from 'lucide-react';
 import { LinkedInIcon } from '../icons/SocialIcons';
 import { journeyMilestones, MilestoneItem } from '../../data/experience';
 
@@ -12,6 +12,10 @@ export const ExperienceSection: React.FC = () => {
 
   const getCategoryIcon = (category: MilestoneItem['category']) => {
     switch (category) {
+      case 'Leadership & Media':
+        return <Users className="size-4 text-pink-500" />;
+      case 'Certifications':
+        return <Award className="size-4 text-emerald-500" />;
       case 'Education':
         return <GraduationCap className="size-4 text-emerald-500" />;
       case 'Projects & Building':
@@ -34,7 +38,7 @@ export const ExperienceSection: React.FC = () => {
           </h2>
         </div>
         <a
-          href="https://www.linkedin.com/in/vireshnagthane/"
+          href="https://www.linkedin.com/in/viresh-nagthane-772444328"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-medium text-muted-foreground hover:text-foreground bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 hover:border-black/15 dark:hover:border-white/15 transition-all group"

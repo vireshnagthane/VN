@@ -21,6 +21,8 @@ export interface ProfileData {
   resumeUrl: string;
   resumeAvailable: boolean;
   verified: boolean;
+  phone: string;
+  email: string;
   educationSummary: {
     degree: string;
     field: string;
@@ -52,20 +54,29 @@ export const profileData: ProfileData = {
   resumeUrl: "/resume/viresh-nagthane-resume.pdf",
   resumeAvailable: true,
   verified: true,
+  phone: "+91 8788021716",
+  email: "vireshnagthane9@gmail.com",
   educationSummary: {
-    degree: "Bachelor's Degree",
+    degree: "Bachelor of Technology (B.Tech)",
     field: "Information Technology",
     institution: "Sanjivani College of Engineering, Kopargaon",
     year: "Third Year",
     graduationYear: "2028",
-    cgpa: "7.3",
+    cgpa: "7.30 / 10",
   },
   socialLinks: [
     {
       id: "email",
       name: "Email",
-      url: "mailto:vireshnagthane@gmail.com",
+      url: "mailto:vireshnagthane9@gmail.com",
       iconName: "mail",
+      visible: true,
+    },
+    {
+      id: "phone",
+      name: "Phone",
+      url: "tel:+918788021716",
+      iconName: "phone",
       visible: true,
     },
     {
@@ -79,7 +90,7 @@ export const profileData: ProfileData = {
     {
       id: "linkedin",
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/vireshnagthane/",
+      url: "https://www.linkedin.com/in/viresh-nagthane-772444328",
       iconName: "linkedin",
       visible: true,
       isExternal: true,
@@ -107,13 +118,6 @@ export const profileData: ProfileData = {
       iconName: "leetcode",
       visible: true,
       isExternal: true,
-    },
-    {
-      id: "phone",
-      name: "Phone",
-      url: "tel:+919172200000",
-      iconName: "phone",
-      visible: false, // Set to true when verified phone is supplied
     },
   ],
   meta: {

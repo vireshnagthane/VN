@@ -17,7 +17,7 @@ export const EducationSection: React.FC = () => {
           </h2>
         </div>
         <a
-          href="https://www.linkedin.com/in/vireshnagthane/"
+          href="https://www.linkedin.com/in/viresh-nagthane-772444328"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-medium text-muted-foreground hover:text-foreground bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5 hover:border-black/15 dark:hover:border-white/15 transition-all"

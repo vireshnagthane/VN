@@ -72,6 +72,6 @@ export async function submitContactMessage(payload: ContactPayload): Promise<Sub
   return {
     success: true,
     isFallback: true,
-    message: "No backend email service is configured. We have prepared a pre-filled email draft to send directly to vireshnagthane@gmail.com.",
+    message: "No backend email service is configured. We have prepared a pre-filled email draft to send directly to vireshnagthane9@gmail.com.",
   };
 }
