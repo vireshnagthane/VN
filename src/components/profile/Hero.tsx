@@ -59,11 +59,8 @@ export const Hero: React.FC = () => {
         <div className="mb-3.5 flex items-center justify-between">
           <div>
             <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
-              <h1 className="font-space-grotesk text-xl sm:text-3xl font-bold tracking-tight">
-                <span className="text-foreground">Viresh Sunil </span>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 font-extrabold">
-                  Nagthane
-                </span>
+              <h1 className="font-space-grotesk text-xl sm:text-3xl font-bold tracking-tight text-black dark:text-white">
+                {profileData.name}
               </h1>
               {profileData.verified && (
                 <img
