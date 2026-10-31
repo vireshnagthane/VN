@@ -99,8 +99,14 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
 
   return (
     <div className="w-full relative">
-      {/* Scrollable Container with nice fade indicator */}
-      <div className="w-full overflow-x-auto pb-2 pt-1 scrollbar-thin">
+      {/* Mobile Swipe Hint */}
+      <div className="flex sm:hidden items-center justify-between text-[10px] text-muted-foreground/80 font-mono mb-1.5 select-none">
+        <span>Activity Grid</span>
+        <span>Swipe horizontally &rarr;</span>
+      </div>
+
+      {/* Scrollable Container with touch momentum */}
+      <div className="w-full overflow-x-auto pb-2 pt-1 scrollbar-thin touch-pan-x overscroll-x-contain">
         <div className="min-w-[650px] sm:min-w-full">
           {/* Month labels positioned precisely above their start week */}
           <div className="relative h-4 text-[10px] text-muted-foreground font-mono mb-1 select-none">
@@ -137,6 +143,13 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
                         }
                       }}
                       onMouseLeave={() => setHoveredDay(null)}
+                      onClick={(e) => {
+                        // Allow tapping on mobile to view stats
+                        if (day.count !== -1 && day.date) {
+                          const rect = e.currentTarget.getBoundingClientRect();
+                          setHoveredDay({ day, x: rect.left + rect.width / 2, y: rect.top });
+                        }
+                      }}
                       className={`size-[11px] sm:size-[11.5px] rounded-[2.5px] transition-transform duration-100 hover:scale-125 cursor-pointer ${getColorClass(
                         day.level,
                         day.count
@@ -154,7 +167,7 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
       {hoveredDay && (
         <div
           className="fixed pointer-events-none z-50 -translate-x-1/2 -translate-y-full mb-2 px-2.5 py-1 text-[11px] rounded-lg shadow-md bg-zinc-900 text-zinc-100 dark:bg-zinc-100 dark:text-zinc-900 font-medium whitespace-nowrap animate-in fade-in zoom-in-95 duration-100"
-          style={{ left: hoveredDay.x, top: hoveredDay.y - 6 }}
+          style={{ left: Math.max(80, Math.min(window.innerWidth - 80, hoveredDay.x)), top: hoveredDay.y - 6 }}
         >
           {hoveredDay.day.count > 0 ? (
             <span>
@@ -179,7 +192,7 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
       )}
 
       {/* Legend */}
-      <div className="flex items-center justify-end gap-1.5 mt-3 text-[10px] text-muted-foreground font-mono">
+      <div className="flex items-center justify-end gap-1.5 mt-2 sm:mt-3 text-[10px] text-muted-foreground font-mono">
         <span>Less</span>
         <div className="size-2.5 rounded-[2px] bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.03] dark:border-white/[0.04]" />
         <div className="size-2.5 rounded-[2px] bg-emerald-200 dark:bg-emerald-950/80" />

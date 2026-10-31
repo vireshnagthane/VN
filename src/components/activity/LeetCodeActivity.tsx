@@ -130,70 +130,70 @@ export const LeetCodeActivity: React.FC<LeetCodeActivityProps> = ({ username = L
       </div>
 
       {/* 4 Stat Cards Grid (Faithfully Matching Reference) */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-3 mb-4 sm:mb-5">
         {/* Box 1: Solved */}
-        <div className="rounded-xl border border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] p-3">
+        <div className="rounded-xl border border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] p-2.5 sm:p-3 flex flex-col justify-between">
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium mb-1">
             <Code2 className="size-3.5 text-emerald-500" />
             <span>Solved</span>
           </div>
           <div className="flex items-baseline gap-1.5">
-            <span className="text-xl font-bold font-space-grotesk text-foreground">
+            <span className="text-lg sm:text-xl font-bold font-space-grotesk text-foreground">
               {totalSolved}
             </span>
-            <span className="text-[11px] text-muted-foreground">/ 3300+</span>
+            <span className="text-[10px] sm:text-[11px] text-muted-foreground">/ 3300+</span>
           </div>
-          <p className="text-[10px] text-muted-foreground mt-2 flex gap-1.5 font-mono">
-            <span className="text-emerald-500 font-medium">E: {easySolved}</span>
-            <span className="text-amber-500 font-medium">M: {mediumSolved}</span>
-            <span className="text-rose-500 font-medium">H: {hardSolved}</span>
+          <p className="text-[10px] text-muted-foreground mt-1.5 flex gap-1 sm:gap-1.5 font-mono flex-wrap">
+            <span className="text-emerald-500 font-medium">E:{easySolved}</span>
+            <span className="text-amber-500 font-medium">M:{mediumSolved}</span>
+            <span className="text-rose-500 font-medium">H:{hardSolved}</span>
           </p>
         </div>
 
         {/* Box 2: Streak */}
-        <div className="rounded-xl border border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] p-3">
+        <div className="rounded-xl border border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] p-2.5 sm:p-3 flex flex-col justify-between">
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium mb-1">
             <Flame className="size-3.5 text-orange-500 fill-orange-500" />
             <span>Streak</span>
           </div>
           <div className="flex items-baseline gap-1.5">
-            <span className="text-xl font-bold font-space-grotesk text-foreground">
+            <span className="text-lg sm:text-xl font-bold font-space-grotesk text-foreground">
               {streakDays}
             </span>
-            <span className="text-[11px] text-muted-foreground">Days</span>
+            <span className="text-[10px] sm:text-[11px] text-muted-foreground">Days</span>
           </div>
-          <p className="text-[10px] text-muted-foreground mt-2 font-mono">
+          <p className="text-[10px] text-muted-foreground mt-1.5 font-mono truncate">
             {activeDays} days active in year
           </p>
         </div>
 
         {/* Box 3: Global Rank */}
-        <div className="rounded-xl border border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] p-3">
+        <div className="rounded-xl border border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] p-2.5 sm:p-3 flex flex-col justify-between">
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium mb-1">
             <Trophy className="size-3.5 text-amber-500" />
             <span>Global Rank</span>
           </div>
           <div className="flex items-baseline gap-1.5">
-            <span className="text-xl font-bold font-space-grotesk text-foreground">
+            <span className="text-base sm:text-xl font-bold font-space-grotesk text-foreground truncate">
               {globalRank}
             </span>
           </div>
-          <p className="text-[10px] text-muted-foreground mt-2">Active Problem Solver</p>
+          <p className="text-[10px] text-muted-foreground mt-1.5 truncate">Active Problem Solver</p>
         </div>
 
         {/* Box 4: Badges */}
-        <div className="rounded-xl border border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] p-3">
+        <div className="rounded-xl border border-black/5 dark:border-white/5 bg-black/[0.02] dark:bg-white/[0.02] p-2.5 sm:p-3 flex flex-col justify-between">
           <div className="flex items-center gap-1.5 text-xs text-muted-foreground font-medium mb-1">
             <Award className="size-3.5 text-purple-500" />
             <span>Badges</span>
           </div>
           <div className="flex items-baseline gap-1.5">
-            <span className="text-xl font-bold font-space-grotesk text-foreground">
+            <span className="text-lg sm:text-xl font-bold font-space-grotesk text-foreground">
               {badgesCount}
             </span>
-            <span className="text-[11px] text-muted-foreground">Earned</span>
+            <span className="text-[10px] sm:text-[11px] text-muted-foreground">Earned</span>
           </div>
-          <p className="text-[10px] text-muted-foreground mt-2 truncate" title={badgeName}>
+          <p className="text-[10px] text-muted-foreground mt-1.5 truncate" title={badgeName}>
             {badgeName}
           </p>
         </div>

@@ -80,14 +80,14 @@ export const GitHubActivity: React.FC<GitHubActivityProps> = ({ username = 'vire
         </div>
 
         {/* Year Filter Controls */}
-        <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 p-1 rounded-xl border border-black/5 dark:border-white/5 text-xs font-medium">
+        <div className="flex items-center gap-1 bg-black/5 dark:bg-white/5 p-1 rounded-xl border border-black/5 dark:border-white/5 text-xs font-medium overflow-x-auto max-w-full">
           {yearTabs.map((year) => {
             const isActive = selectedYear === year;
             return (
               <button
                 key={year}
                 onClick={() => setSelectedYear(year)}
-                className={`px-2.5 sm:px-3 py-1 rounded-lg transition-all ${
+                className={`px-2 sm:px-3 py-1 rounded-lg transition-all whitespace-nowrap text-[11px] sm:text-xs ${
                   isActive
                     ? 'bg-white text-black dark:bg-zinc-800 dark:text-white shadow-xs font-semibold'
                     : 'text-muted-foreground hover:text-foreground'

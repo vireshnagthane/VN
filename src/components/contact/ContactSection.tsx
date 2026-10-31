@@ -83,20 +83,20 @@ export const ContactSection: React.FC = () => {
       </div>
 
       {/* Social Quick Links Row (Matching Reference) */}
-      <div className="flex flex-wrap items-center justify-center gap-2 mb-8">
+      <div className="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 mb-6 sm:mb-8">
         <a
           href={`mailto:${profileData.email}`}
-          className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-9 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"
+          className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-8 sm:h-9 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"
         >
-          <Mail className="size-4 text-emerald-500" />
+          <Mail className="size-3.5 sm:size-4 text-emerald-500" />
           <span>Email</span>
         </a>
 
         <a
           href={`tel:${profileData.phone}`}
-          className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-9 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"
+          className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-8 sm:h-9 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"
         >
-          <Phone className="size-4 text-emerald-500" />
+          <Phone className="size-3.5 sm:size-4 text-emerald-500" />
           <span>Call</span>
         </a>
 
@@ -104,9 +104,9 @@ export const ContactSection: React.FC = () => {
           href="https://github.com/vireshnagthane"
           target="_blank"
           rel="noopener noreferrer"
-          className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-9 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"
+          className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-8 sm:h-9 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"
         >
-          <GitHubIcon className="size-4" />
+          <GitHubIcon className="size-3.5 sm:size-4" />
           <span>GitHub</span>
         </a>
 
@@ -114,9 +114,9 @@ export const ContactSection: React.FC = () => {
           href="https://www.linkedin.com/in/viresh-nagthane-772444328"
           target="_blank"
           rel="noopener noreferrer"
-          className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-9 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"
+          className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-8 sm:h-9 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"
         >
-          <LinkedInIcon className="size-4 text-[#0A66C2]" />
+          <LinkedInIcon className="size-3.5 sm:size-4 text-[#0A66C2]" />
           <span>LinkedIn</span>
         </a>
 
@@ -124,9 +124,9 @@ export const ContactSection: React.FC = () => {
           href="https://www.instagram.com/zerostatic09/"
           target="_blank"
           rel="noopener noreferrer"
-          className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-9 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"
+          className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-8 sm:h-9 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"
         >
-          <InstagramIcon className="size-4 text-pink-500" />
+          <InstagramIcon className="size-3.5 sm:size-4 text-pink-500" />
           <span>Instagram</span>
         </a>
 
@@ -134,9 +134,9 @@ export const ContactSection: React.FC = () => {
           href="https://leetcode.com/u/viresh_09/"
           target="_blank"
           rel="noopener noreferrer"
-          className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-9 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"
+          className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-8 sm:h-9 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-1.5 sm:gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"
         >
-          <LeetCodeIcon className="size-4 text-amber-500" />
+          <LeetCodeIcon className="size-3.5 sm:size-4 text-amber-500" />
           <span>LeetCode</span>
         </a>
       </div>

@@ -58,6 +58,17 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  html, body {
+    overflow-x: hidden;
+    max-width: 100vw;
+    width: 100%;
+  }
+
   body {
     background-color: var(--background);
     color: var(--foreground);
@@ -107,10 +118,10 @@
   border-color: rgba(255, 255, 255, 0.14);
 }
 
-/* Custom subtle scrollbar */
+/* Custom subtle scrollbar with smooth touch scrolling */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
@@ -124,6 +135,18 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(150, 150, 150, 0.35);
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-thin {
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Code & font utilities */

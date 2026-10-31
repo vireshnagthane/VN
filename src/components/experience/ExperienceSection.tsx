@@ -75,7 +75,7 @@ export const ExperienceSection: React.FC = () => {
                   </h3>
                   <span className="text-xs text-muted-foreground">· {item.organization}</span>
                 </div>
-                <div className="text-xs font-mono text-muted-foreground whitespace-nowrap">
+                <div className="text-xs font-mono text-muted-foreground sm:whitespace-nowrap">
                   {item.period} · {item.duration}
                 </div>
               </div>

@@ -49,7 +49,7 @@ export const EducationSection: React.FC = () => {
               {edu.degree} — {edu.fieldOfStudy}
             </div>
 
-            <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
+            <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3 flex-wrap">
               <span>{edu.status}</span>
               <span>•</span>
               <span>{edu.location}</span>

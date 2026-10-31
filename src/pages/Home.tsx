@@ -12,7 +12,7 @@ import { Footer } from '../components/layout/Footer';
 
 export const Home: React.FC = () => {
   return (
-    <div className="max-w-4xl mx-auto px-3 sm:px-6 py-6 sm:py-10 transition-colors duration-200">
+    <div className="max-w-4xl mx-auto px-3 sm:px-6 py-4 sm:py-10 transition-colors duration-200 w-full overflow-hidden sm:overflow-visible">
       {/* Hero & Profile Header */}
       <Hero />
 
