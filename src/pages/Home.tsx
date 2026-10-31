@@ -5,42 +5,34 @@ import { GitHubActivity } from '../components/activity/GitHubActivity';
 import { ExperienceSection } from '../components/experience/ExperienceSection';
 import { ProjectsSection } from '../components/projects/ProjectsSection';
 import { EducationSection } from '../components/education/EducationSection';
-import { SkillsSection } from '../components/skills/SkillsSection';
-import { BlogSection } from '../components/blogs/BlogSection';
 import { ContactSection } from '../components/contact/ContactSection';
 import { Footer } from '../components/layout/Footer';
 
 export const Home: React.FC = () => {
   return (
     <div className="max-w-4xl mx-auto px-3 sm:px-6 py-4 sm:py-10 transition-colors duration-200 w-full overflow-hidden sm:overflow-visible">
-      {/* Hero & Profile Header */}
+      {/* 1. Hero Profile Card */}
       <Hero />
 
-      {/* LeetCode Activity Card */}
+      {/* 2. LeetCode Activity Card */}
       <LeetCodeActivity />
 
-      {/* GitHub Activity Card */}
+      {/* 3. GitHub Activity Card */}
       <GitHubActivity username="vireshnagthane" />
 
-      {/* Experience & Journey Card */}
+      {/* 4. Experience & Journey Timeline */}
       <ExperienceSection />
 
-      {/* Projects Gallery */}
+      {/* 5. Things I've Built (Projects Gallery) */}
       <ProjectsSection />
 
-      {/* Education Card */}
+      {/* 6. Education Card */}
       <EducationSection />
 
-      {/* Skills & Technologies Card */}
-      <SkillsSection />
-
-      {/* Blogs & Technical Notes Card */}
-      <BlogSection />
-
-      {/* Contact Card */}
+      {/* 7. Contact Card ("Let's build something extraordinary together") */}
       <ContactSection />
 
-      {/* Footer Banner */}
+      {/* 8. Footer Banner */}
       <Footer />
     </div>
   );
