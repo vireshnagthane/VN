@@ -72,7 +72,7 @@
   body {
     background-color: var(--background);
     color: var(--foreground);
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Parkinsans', 'Inter', system-ui, -apple-system, sans-serif;
     min-height: 100vh;
     background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1px);
     background-size: 20px 20px;
@@ -150,6 +150,7 @@
 }
 
 /* Code & font utilities */
-.font-space-grotesk {
-  font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+.font-space-grotesk,
+.font-parkinsans {
+  font-family: 'Parkinsans', 'Space Grotesk', system-ui, -apple-system, sans-serif;
 }

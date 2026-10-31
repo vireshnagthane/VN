@@ -43,8 +43,9 @@ export default {
         ring: 'var(--ring)',
       },
       fontFamily: {
-        'space-grotesk': ['"Space Grotesk"', 'sans-serif'],
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+        'parkinsans': ['"Parkinsans"', 'sans-serif'],
+        'space-grotesk': ['"Parkinsans"', '"Space Grotesk"', 'sans-serif'],
+        sans: ['"Parkinsans"', 'Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
         mono: ['JetBrains Mono', 'Menlo', 'monospace'],
       },
       boxShadow: {
