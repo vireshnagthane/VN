@@ -102,7 +102,7 @@ export const ContactSection: React.FC = () => {
         </a>
 
         <a
-          href="https://www.linkedin.com/in/viresh-nagthane-772444328"
+          href="https://www.linkedin.com/in/vireshnagthane/"
           target="_blank"
           rel="noopener noreferrer"
           className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-9 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"
@@ -122,7 +122,7 @@ export const ContactSection: React.FC = () => {
         </a>
 
         <a
-          href="https://leetcode.com/u/vireshnagthane/"
+          href="https://leetcode.com/u/viresh_09/"
           target="_blank"
           rel="noopener noreferrer"
           className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-9 px-4 sm:px-5 py-2.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"

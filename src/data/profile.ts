@@ -79,7 +79,7 @@ export const profileData: ProfileData = {
     {
       id: "linkedin",
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/viresh-nagthane-772444328",
+      url: "https://www.linkedin.com/in/vireshnagthane/",
       iconName: "linkedin",
       visible: true,
       isExternal: true,
@@ -103,7 +103,7 @@ export const profileData: ProfileData = {
     {
       id: "leetcode",
       name: "LeetCode",
-      url: "https://leetcode.com/u/vireshnagthane/",
+      url: "https://leetcode.com/u/viresh_09/",
       iconName: "leetcode",
       visible: true,
       isExternal: true,

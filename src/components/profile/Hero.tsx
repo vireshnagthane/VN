@@ -64,9 +64,12 @@ export const Hero: React.FC = () => {
                 />
               )}
             </div>
-            <div className="mt-1">
+            <div className="mt-1 flex flex-col gap-1.5">
               <p className="text-muted-foreground text-xs sm:text-sm font-medium">
                 {profileData.headline}
+              </p>
+              <p className="text-xs text-foreground/60 italic font-mono">
+                &ldquo;Curious enough to break things. Stubborn enough to understand why. Building my way from prompts to production. 🧪&rdquo;
               </p>
             </div>
           </div>
@@ -135,7 +138,7 @@ export const Hero: React.FC = () => {
 
             {/* LinkedIn */}
             <a
-              href="https://www.linkedin.com/in/viresh-nagthane-772444328"
+              href="https://www.linkedin.com/in/vireshnagthane/"
               target="_blank"
               rel="noopener noreferrer"
               className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-9 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"
@@ -168,7 +171,7 @@ export const Hero: React.FC = () => {
 
             {/* LeetCode */}
             <a
-              href="https://leetcode.com/u/vireshnagthane/"
+              href="https://leetcode.com/u/viresh_09/"
               target="_blank"
               rel="noopener noreferrer"
               className="border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:text-foreground dark:hover:bg-input/50 h-9 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm flex items-center gap-2 transition-all duration-100 ease-in-out hover:shadow-md hover:scale-105 border-border/80"
