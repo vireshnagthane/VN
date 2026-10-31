@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
+    
+    <!-- Primary Meta Tags -->
+    <title>Viresh Nagthane | IT Student &amp; Developer</title>
+    <meta name="title" content="Viresh Nagthane | IT Student &amp; Developer" />
+    <meta name="description" content="Explore the portfolio, projects, technical skills, and learning journey of Viresh Sunil Nagthane, an Information Technology student interested in software development, Data Science, and Cloud Computing." />
+    <meta name="keywords" content="Viresh Nagthane, Viresh Sunil Nagthane, Viresh developer, IT student, Sanjivani College of Engineering, Cloud Engineer, Software Developer, Data Science, Remanote, SmartBlood, Portfolio" />
+    <meta name="author" content="Viresh Sunil Nagthane" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://vireshnagthane.vercel.app" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vireshnagthane.vercel.app/" />
+    <meta property="og:title" content="Viresh Nagthane | IT Student &amp; Developer" />
+    <meta property="og:description" content="Explore the portfolio, projects, technical skills, and learning journey of Viresh Sunil Nagthane, an Information Technology student interested in software development, Data Science, and Cloud Computing." />
+    <meta property="og:image" content="/viresh.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://vireshnagthane.vercel.app/" />
+    <meta property="twitter:title" content="Viresh Nagthane | IT Student &amp; Developer" />
+    <meta property="twitter:description" content="Explore the portfolio, projects, technical skills, and learning journey of Viresh Sunil Nagthane, an Information Technology student interested in software development, Data Science, and Cloud Computing." />
+    <meta property="twitter:image" content="/viresh.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts: Space Grotesk & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Inline Script to prevent Theme Flash -->
+    <script>
+      (function() {
+        try {
+          const theme = localStorage.getItem('theme');
+          const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          if (theme === 'dark' || (!theme && supportDarkMode)) {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-background text-foreground antialiased selection:bg-emerald-500/20 selection:text-emerald-500 transition-colors duration-200">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 1991 >>
+stream
+BT
+/F1 20 Tf
+50 740 Td
+(VIRESH SUNIL NAGTHANE) Tj
+/F1 11 Tf
+0 -22 Td
+(Information Technology Student | Developer | Aspiring Cloud Engineer) Tj
+/F1 9 Tf
+0 -16 Td
+(Email: vireshnagthane@gmail.com | GitHub: github.com/vireshnagthane | LinkedIn: linkedin.com/in/viresh-nagthane-772444328) Tj
+0 -24 Td
+/F1 13 Tf
+(EDUCATION) Tj
+/F1 10 Tf
+0 -16 Td
+(Sanjivani College of Engineering, Kopargaon, Maharashtra, India) Tj
+0 -14 Td
+(Bachelor of Technology - Information Technology | Third Year | CGPA: 7.3 | Class of 2028) Tj
+0 -14 Td
+(Coursework: DSA, DBMS, Computer Networks, Operating Systems, Software Engineering, Data Science) Tj
+0 -24 Td
+/F1 13 Tf
+(FEATURED PROJECTS) Tj
+/F1 10 Tf
+0 -16 Td
+(1. Remanote - Personal Notes & Knowledge Vault (https://remanote.vercel.app/)) Tj
+0 -13 Td
+(   React, JavaScript, Tailwind CSS | Neo-brutalist pop bento design with fast idea capture & shelves) Tj
+0 -16 Td
+(2. SmartBlood Emergency System (https://github.com/vireshnagthane/SmartBlood-Emergency-System)) Tj
+0 -13 Td
+(   Python, Flask, MySQL | Real-time blood donor search and hospital matching database system) Tj
+0 -16 Td
+(3. Kalpana Dental Clinic Web Platform) Tj
+0 -13 Td
+(   React, Vite, Node.js, Express, Supabase | Healthcare treatment showcase & WhatsApp enquiry) Tj
+0 -16 Td
+(4. Mayur Driving School Android App) Tj
+0 -13 Td
+(   Kotlin, Android Studio, Firebase Firestore | Student attendance, fees, and RTO test quiz system) Tj
+0 -16 Td
+(5. Offline MSRTC Bus Tracking System) Tj
+0 -13 Td
+(   Android, Kotlin, SQLite, Cellular Telephony APIs | Rural transit bus arrival estimation) Tj
+0 -24 Td
+/F1 13 Tf
+(TECHNICAL SKILLS) Tj
+/F1 10 Tf
+0 -16 Td
+(Languages: Java, Python, C, C++, Kotlin, JavaScript, HTML5, CSS3, SQL) Tj
+0 -14 Td
+(Frameworks & Tools: React, Node.js, Express, Android Studio, Git, GitHub, Tailwind CSS) Tj
+0 -14 Td
+(Databases: MySQL, Firebase Firestore, SQLite, Room, MongoDB) Tj
+0 -14 Td
+(Data Science & Cloud: NumPy, pandas, Matplotlib, AWS Fundamentals, Linux, Docker Basics) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+2354
+%%EOF

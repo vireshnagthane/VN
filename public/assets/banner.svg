@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="40%" stop-color="#022c22" />
+      <stop offset="70%" stop-color="#064e3b" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <radialGradient id="glow1" cx="30%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.45" />
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glow2" cx="80%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+    </radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#34d399" stroke-opacity="0.08" stroke-width="1" />
+    </pattern>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="400" fill="url(#bgGrad)" />
+  
+  <!-- Glowing Orbs -->
+  <circle cx="360" cy="120" r="280" fill="url(#glow1)" />
+  <circle cx="960" cy="160" r="320" fill="url(#glow2)" />
+  
+  <!-- Grid Lines -->
+  <rect width="1200" height="400" fill="url(#grid)" />
+  
+  <!-- Dynamic Waves / Topo Contours -->
+  <path d="M -50 320 Q 250 180 600 280 T 1250 200 L 1250 450 L -50 450 Z" fill="#042f2e" fill-opacity="0.6" />
+  <path d="M -50 280 Q 300 350 700 240 T 1250 310" fill="none" stroke="#10b981" stroke-opacity="0.3" stroke-width="2" />
+  <path d="M -50 240 Q 350 140 750 290 T 1250 220" fill="none" stroke="#38bdf8" stroke-opacity="0.25" stroke-width="1.5" />
+  <path d="M -50 360 Q 400 220 850 340 T 1250 260" fill="none" stroke="#34d399" stroke-opacity="0.2" stroke-width="1.5" />
+  
+  <!-- Modern Code / Circuit Sparks -->
+  <circle cx="240" cy="190" r="3" fill="#6ee7b7" opacity="0.8" />
+  <circle cx="480" cy="140" r="2" fill="#38bdf8" opacity="0.6" />
+  <circle cx="700" cy="240" r="3" fill="#6ee7b7" opacity="0.9" />
+  <circle cx="880" cy="180" r="2.5" fill="#a7f3d0" opacity="0.7" />
+  <circle cx="1040" cy="130" r="2" fill="#38bdf8" opacity="0.8" />
+</svg>
