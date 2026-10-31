@@ -98,7 +98,7 @@ export const profileData: ProfileData = {
     {
       id: "instagram",
       name: "Instagram",
-      url: "https://www.instagram.com/viresh_09_/",
+      url: "https://www.instagram.com/zerostatic09/",
       iconName: "instagram",
       visible: true,
       isExternal: true,
