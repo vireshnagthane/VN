@@ -26,11 +26,11 @@ export const Hero: React.FC = () => {
     <div className="relative">
       {/* Banner & Avatar Container */}
       <div className="relative mb-6 z-20">
-        <div className="relative overflow-hidden rounded-2xl min-h-36 sm:h-44 bg-zinc-900 border border-black/8 dark:border-white/10 shadow-sm">
+        <div className="relative overflow-hidden rounded-2xl w-full aspect-[2.4/1] min-h-40 sm:min-h-48 md:min-h-52 bg-zinc-950 border border-black/8 dark:border-white/10 shadow-sm">
           <img
             alt="Profile Banner"
             src={profileData.bannerUrl}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover object-center"
           />
         </div>
         
