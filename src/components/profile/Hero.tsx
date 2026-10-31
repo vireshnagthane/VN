@@ -56,11 +56,14 @@ export const Hero: React.FC = () => {
       {/* Hero Profile Card */}
       <div className="relative z-10 rounded-2xl border p-4 sm:p-8 pt-11 sm:pt-12 bg-white/60 border-black/8 dark:bg-white/[0.02] dark:border-white/[0.08] backdrop-blur-sm shadow-xs">
         {/* Header with Name & Verified Icon */}
-        <div className="mb-4 flex items-center justify-between">
+        <div className="mb-3.5 flex items-center justify-between">
           <div>
             <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
-              <h1 className="font-space-grotesk text-lg sm:text-2xl font-semibold text-foreground">
-                {profileData.name}
+              <h1 className="font-space-grotesk text-xl sm:text-3xl font-bold tracking-tight">
+                <span className="text-foreground">Viresh Sunil </span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 font-extrabold">
+                  Nagthane
+                </span>
               </h1>
               {profileData.verified && (
                 <img
@@ -71,24 +74,31 @@ export const Hero: React.FC = () => {
                 />
               )}
             </div>
-            <div className="mt-1 flex flex-col gap-1 sm:gap-1.5">
-              <p className="text-muted-foreground text-xs sm:text-sm font-medium leading-snug">
-                {profileData.headline}
-              </p>
-              <p className="text-[11px] sm:text-xs text-foreground/60 italic font-mono leading-relaxed">
-                &ldquo;Curious enough to break things. Stubborn enough to understand why. Building my way from prompts to production. 🧪&rdquo;
-              </p>
+
+            {/* Colored role highlights */}
+            <div className="mt-1.5 flex items-center gap-1.5 sm:gap-2 flex-wrap text-xs sm:text-sm font-medium">
+              <span className="text-emerald-600 dark:text-emerald-400 font-semibold">
+                IT Undergraduate
+              </span>
+              <span className="text-muted-foreground/40">•</span>
+              <span className="text-blue-600 dark:text-blue-400 font-semibold">
+                Full-Stack Builder
+              </span>
+              <span className="text-muted-foreground/40">•</span>
+              <span className="text-purple-600 dark:text-purple-400 font-semibold">
+                Aspiring Cloud Engineer
+              </span>
             </div>
           </div>
         </div>
 
-        {/* Bio Paragraph */}
-        <p className="text-xs sm:text-base text-foreground/75 leading-relaxed mb-5 sm:mb-6">
+        {/* Short, Clean Bio Paragraph */}
+        <p className="text-xs sm:text-sm text-foreground/80 leading-relaxed mb-4 max-w-2xl">
           {profileData.bio}
         </p>
 
         {/* Action Row: Resume / CV Buttons */}
-        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-5 sm:mb-6">
+        <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-5">
           <button
             onClick={() => setIsResumeModalOpen(true)}
             className="inline-flex items-center justify-center gap-1.5 sm:gap-2 whitespace-nowrap rounded-xl transition-all h-8 sm:h-9 px-3.5 sm:px-5 text-xs sm:text-sm font-medium main-button text-white cursor-pointer shadow-sm hover:opacity-95"
@@ -117,12 +127,12 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* "Me on Internet!" Section */}
-        <div className="mt-6 sm:mt-8 pt-4 border-t border-border/40">
-          <p className="text-xs sm:text-sm mb-2.5 sm:mb-3 text-foreground">
-            Me on <strong>Internet!</strong>
+        <div className="mt-5 sm:mt-6 pt-3.5 border-t border-border/40">
+          <p className="text-xs sm:text-sm mb-2 sm:mb-2.5 text-foreground">
+            Me on <strong className="text-emerald-500 dark:text-emerald-400">Internet!</strong>
           </p>
           <div className="flex flex-wrap gap-1.5 sm:gap-2">
-            {/* Email with copy option */}
+            {/* Email */}
             <div className="relative group">
               <a
                 href={`mailto:${profileData.email}`}
@@ -141,7 +151,7 @@ export const Hero: React.FC = () => {
               </button>
             </div>
 
-            {/* Phone with copy option */}
+            {/* Phone */}
             <div className="relative group">
               <a
                 href={`tel:${profileData.phone}`}

@@ -32,7 +32,7 @@ export const ProjectsSection: React.FC = () => {
             Things I&apos;ve Built
           </h2>
         </div>
-        <span className="text-xs text-muted-foreground font-mono">
+        <span className="text-xs text-emerald-600 dark:text-emerald-400 font-mono font-medium bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
           {projectsData.length} Projects
         </span>
       </div>

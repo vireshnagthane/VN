@@ -28,11 +28,28 @@ export const ExperienceSection: React.FC = () => {
     }
   };
 
+  const getRoleColor = (category: MilestoneItem['category']) => {
+    switch (category) {
+      case 'Leadership & Media':
+        return 'text-pink-600 dark:text-pink-400';
+      case 'Certifications':
+        return 'text-emerald-600 dark:text-emerald-400';
+      case 'Projects & Building':
+        return 'text-blue-600 dark:text-blue-400';
+      case 'Data Science':
+        return 'text-purple-600 dark:text-purple-400';
+      case 'Cloud & Systems':
+      default:
+        return 'text-amber-600 dark:text-amber-400';
+    }
+  };
+
   return (
     <div id="experience-section" className="mt-7 relative z-10 rounded-2xl border p-4 sm:p-8 pt-6 sm:pt-8 bg-white/60 border-black/8 dark:bg-white/[0.02] dark:border-white/[0.08] backdrop-blur-sm">
       {/* Header */}
       <div className="flex items-center justify-between mb-6 flex-wrap gap-2 pb-3 border-b border-border/40">
         <div className="flex items-center gap-2">
+          <Briefcase className="size-5 text-emerald-500" />
           <h2 className="font-space-grotesk text-lg sm:text-xl font-semibold text-foreground">
             Experience &amp; Journey
           </h2>
@@ -80,9 +97,9 @@ export const ExperienceSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Role & Location */}
-              <div className="text-xs sm:text-sm font-medium text-emerald-600 dark:text-emerald-400 mb-2">
-                {item.role} · <span className="text-muted-foreground font-normal">{item.location}</span>
+              {/* Role with Color font accent */}
+              <div className={`text-xs sm:text-sm font-medium ${getRoleColor(item.category)} mb-2`}>
+                <span className="font-semibold">{item.role}</span> · <span className="text-muted-foreground font-normal">{item.location}</span>
               </div>
 
               {/* Summary Description */}
