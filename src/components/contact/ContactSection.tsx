@@ -54,7 +54,7 @@ export const ContactSection: React.FC = () => {
         )}&body=${encodeURIComponent(
           `Hi Viresh,\n\nFrom: ${formData.name} (${formData.email})\n\n${formData.message}`
         )}`;
-        window.open(mailtoUrl, '_blank');
+        window.location.href = mailtoUrl;
       }
     } catch (err) {
       setSubmitting(false);

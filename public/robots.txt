@@ -1,0 +1,6 @@
+# Robots.txt for Viresh Nagthane Portfolio
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://vireshnagthane.vercel.app/sitemap.xml
