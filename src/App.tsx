@@ -4,7 +4,7 @@ import { Home } from './pages/Home';
 
 export const App: React.FC = () => {
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground transition-colors duration-200 w-full overflow-x-hidden">
+    <div className="min-h-screen flex flex-col text-foreground transition-colors duration-200 w-full overflow-x-hidden">
       <Header />
       <main className="flex-grow w-full">
         <Home />

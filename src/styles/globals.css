@@ -25,8 +25,8 @@
     --ring: #d4d4d4;
     --radius: 0.75rem;
 
-    /* Subtle dot grid pattern */
-    --dot-color: rgba(0, 0, 0, 0.08);
+    /* Subtle crisp dot grid pattern matching modern portfolio reference */
+    --dot-color: rgba(0, 0, 0, 0.14);
   }
 
   .dark {
@@ -50,8 +50,8 @@
     --input: #262626;
     --ring: #525252;
 
-    /* Subtle dot grid pattern */
-    --dot-color: rgba(255, 255, 255, 0.06);
+    /* Subtle crisp dot grid pattern matching modern portfolio reference */
+    --dot-color: rgba(255, 255, 255, 0.13);
   }
 
   * {
@@ -74,7 +74,7 @@
     color: var(--foreground);
     font-family: 'Parkinsans', 'Inter', system-ui, -apple-system, sans-serif;
     min-height: 100vh;
-    background-image: radial-gradient(circle, var(--dot-color) 1px, transparent 1px);
+    background-image: radial-gradient(circle, var(--dot-color) 1.2px, transparent 1.2px);
     background-size: 20px 20px;
     background-position: 0 0;
   }
