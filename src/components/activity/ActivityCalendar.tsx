@@ -48,36 +48,36 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
     weeks.push(currentWeek);
   }
 
-  // Get color for intensity level
+  // Get color for intensity level (vibrant, clearly visible contrast)
   const getColorClass = (level: number, count: number) => {
     if (count === -1) return 'opacity-0 pointer-events-none';
     if (level === 0 || count === 0) {
-      return 'bg-black/[0.04] dark:bg-white/[0.04] border border-black/[0.03] dark:border-white/[0.04]';
+      return 'bg-black/[0.04] dark:bg-white/[0.06] border border-black/[0.03] dark:border-white/[0.05]';
     }
 
     if (colorScheme === 'green') {
       switch (level) {
         case 1:
-          return 'bg-emerald-200 dark:bg-emerald-950/80 border-emerald-300 dark:border-emerald-800';
+          return 'bg-emerald-300 dark:bg-emerald-700 border-emerald-400 dark:border-emerald-600 shadow-2xs';
         case 2:
-          return 'bg-emerald-400 dark:bg-emerald-700 border-emerald-500 dark:border-emerald-600';
+          return 'bg-emerald-400 dark:bg-emerald-600 border-emerald-500 dark:border-emerald-500 shadow-2xs';
         case 3:
-          return 'bg-emerald-500 dark:bg-emerald-500 border-emerald-600 dark:border-emerald-400';
+          return 'bg-emerald-500 dark:bg-emerald-500 border-emerald-600 dark:border-emerald-400 shadow-xs';
         case 4:
         default:
-          return 'bg-emerald-600 dark:bg-emerald-400 border-emerald-700 dark:border-emerald-300';
+          return 'bg-emerald-600 dark:bg-emerald-400 border-emerald-700 dark:border-emerald-300 shadow-sm shadow-emerald-500/20';
       }
     } else {
       switch (level) {
         case 1:
-          return 'bg-amber-200 dark:bg-amber-950/80 border-amber-300 dark:border-amber-800';
+          return 'bg-amber-300 dark:bg-amber-700 border-amber-400 dark:border-amber-600 shadow-2xs';
         case 2:
-          return 'bg-amber-400 dark:bg-amber-700 border-amber-500 dark:border-amber-600';
+          return 'bg-amber-400 dark:bg-amber-600 border-amber-500 dark:border-amber-500 shadow-2xs';
         case 3:
-          return 'bg-amber-500 dark:bg-amber-500 border-amber-600 dark:border-amber-400';
+          return 'bg-amber-500 dark:bg-amber-500 border-amber-600 dark:border-amber-400 shadow-xs';
         case 4:
         default:
-          return 'bg-amber-600 dark:bg-amber-400 border-amber-700 dark:border-amber-300';
+          return 'bg-amber-600 dark:bg-amber-400 border-amber-700 dark:border-amber-300 shadow-sm shadow-amber-500/20';
       }
     }
   };

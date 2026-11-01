@@ -10,7 +10,7 @@ interface LeetCodeActivityProps {
 export const LeetCodeActivity: React.FC<LeetCodeActivityProps> = ({ username = LEETCODE_CONFIG.username }) => {
   const [stats, setStats] = useState<LeetCodeStats | null>(null);
   const [loading, setLoading] = useState(true);
-  const [selectedYear, setSelectedYear] = useState<string>('Past Year');
+  const [selectedYear, setSelectedYear] = useState<string>('2026');
 
   useEffect(() => {
     let isMounted = true;
@@ -32,20 +32,11 @@ export const LeetCodeActivity: React.FC<LeetCodeActivityProps> = ({ username = L
     };
   }, [username]);
 
-  // Generate calendar days for LeetCode based on selected year
+  // Generate calendar days for LeetCode based on selected year (2026 by default)
   const calendarDays: CalendarDay[] = React.useMemo(() => {
     const days: CalendarDay[] = [];
-    let start: Date;
-    let end: Date;
-
-    if (selectedYear === 'Past Year') {
-      end = new Date();
-      start = new Date();
-      start.setDate(end.getDate() - 365);
-    } else {
-      start = new Date(`${selectedYear}-01-01`);
-      end = new Date(`${selectedYear}-12-31`);
-    }
+    const start = new Date(`${selectedYear}-01-01`);
+    const end = new Date(`${selectedYear}-12-31`);
 
     const current = new Date(start);
     while (current <= end) {
@@ -75,7 +66,7 @@ export const LeetCodeActivity: React.FC<LeetCodeActivityProps> = ({ username = L
     return days;
   }, [stats, selectedYear]);
 
-  const yearTabs = ['Past Year', '2026', '2025'];
+  const yearTabs = ['2026', '2025'];
 
   const totalSolved = stats?.totalSolved ?? 95;
   const easySolved = stats?.easySolved ?? 80;

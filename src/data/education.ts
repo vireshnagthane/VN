@@ -50,7 +50,7 @@ export const educationData: EducationItem[] = [
     period: "Completed 2024",
     status: "HSC Science",
     grade: "81.00%",
-    location: "Kopargaon, Maharashtra",
+    location: " Maharashtra",
     coursework: [
       "Physics",
       "Chemistry",
