@@ -23,10 +23,11 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
   const weeks: CalendarDay[][] = [];
   let currentWeek: CalendarDay[] = [];
 
-  // Pad the first week to align with the correct day of week
-  if (days.length > 0) {
-    const firstDate = new Date(days[0].date);
-    const firstDayIndex = firstDate.getDay(); // 0 is Sunday
+  // Pad the first week to align with the correct day of week (Sunday = 0)
+  if (days.length > 0 && days[0].date) {
+    const [y, m, d] = days[0].date.split('-').map(Number);
+    const firstDate = new Date(y, m - 1, d);
+    const firstDayIndex = firstDate.getDay();
     for (let i = 0; i < firstDayIndex; i++) {
       currentWeek.push({ date: '', count: -1, level: 0 });
     }
@@ -89,10 +90,11 @@ export const ActivityCalendar: React.FC<ActivityCalendarProps> = ({
   weeks.forEach((week, wIndex) => {
     const validDay = week.find((d) => d.date && d.count !== -1);
     if (validDay) {
-      const month = new Date(validDay.date).getMonth();
-      if (month !== lastMonth) {
-        monthHeaders.push({ name: months[month], colIndex: wIndex });
-        lastMonth = month;
+      const [y, m] = validDay.date.split('-').map(Number);
+      const monthIndex = m - 1;
+      if (monthIndex !== lastMonth && monthIndex >= 0 && monthIndex < 12) {
+        monthHeaders.push({ name: months[monthIndex], colIndex: wIndex });
+        lastMonth = monthIndex;
       }
     }
   });

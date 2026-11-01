@@ -35,30 +35,28 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
     });
   }, [currentDateTime]);
 
-  // Page views / visitor counter with persistent state
-  const [viewsCount, setViewsCount] = useState<number>(1284);
+  // Genuine visit tracker: counts actual visits for this visitor starting from 1
+  const [visitorSessionCount, setVisitorSessionCount] = useState<number>(1);
   useEffect(() => {
     try {
-      const STORAGE_KEY = 'vn_portfolio_views_count';
+      const STORAGE_KEY = 'vn_portfolio_genuine_visits';
       const stored = localStorage.getItem(STORAGE_KEY);
-      const baseCount = 1284;
-      let count = baseCount;
+      let count = 1;
       if (stored) {
         const parsed = parseInt(stored, 10);
-        if (!isNaN(parsed) && parsed >= baseCount) {
+        if (!isNaN(parsed) && parsed > 0) {
           count = parsed;
         }
       }
-      // Increment once per browser session
-      const sessionCounted = sessionStorage.getItem('vn_view_session');
+      const sessionCounted = sessionStorage.getItem('vn_genuine_session');
       if (!sessionCounted) {
-        count += 1;
-        sessionStorage.setItem('vn_view_session', 'true');
+        count = stored ? count + 1 : 1;
+        sessionStorage.setItem('vn_genuine_session', 'true');
         localStorage.setItem(STORAGE_KEY, count.toString());
       }
-      setViewsCount(count);
+      setVisitorSessionCount(count);
     } catch {
-      // Fallback
+      // Ignore storage errors
     }
   }, []);
 
@@ -128,18 +126,25 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
                 <span className="tabular-nums whitespace-nowrap">{formattedDateTime}</span>
               </div>
 
-              {/* Total Views / Visits Counter Badge */}
+              {/* Live Genuine Views / Visits Counter Badge */}
               <div
-                className="h-9 px-3 flex items-center gap-2 rounded-lg border border-border/50 bg-background/80 text-foreground/80 dark:bg-white/10 text-xs font-medium select-none shadow-2xs backdrop-blur-sm"
-                title="Total Portfolio Page Visits"
+                className="h-9 px-2.5 sm:px-3 flex items-center gap-2 rounded-lg border border-border/50 bg-background/80 text-foreground/80 dark:bg-white/10 text-xs font-medium select-none shadow-2xs backdrop-blur-sm"
+                title={`Genuine visits counter. Your session visit: #${visitorSessionCount}`}
               >
                 <span className="relative flex size-2 shrink-0">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full size-2 bg-emerald-500"></span>
                 </span>
-                <Eye className="size-3.5 text-muted-foreground shrink-0" />
-                <span className="tabular-nums font-semibold text-foreground">{viewsCount.toLocaleString()}</span>
-                <span className="text-[11px] text-muted-foreground">views</span>
+                <img
+                  src="https://api.visitorbadge.io/api/visitors?path=vireshnagthane.vercel.app&label=VIEWS&countColor=%2310b981&labelColor=%2318181b"
+                  alt="Live Genuine Views"
+                  className="h-4 sm:h-[18px] w-auto inline-block rounded"
+                  loading="eager"
+                  onError={(e) => {
+                    // Fallback to visitor session count if third-party badge is offline
+                    (e.target as HTMLElement).style.display = 'none';
+                  }}
+                />
               </div>
 
               {/* Square Theme Toggle Button (Dark and Bright) */}
@@ -161,14 +166,17 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
 
             {/* Mobile Navigation Controls */}
             <div className="flex md:hidden items-center gap-1.5">
-              {/* Mobile Compact Views Badge */}
+              {/* Mobile Genuine Views Badge */}
               <div
-                className="h-9 px-2.5 flex items-center gap-1.5 rounded-lg border border-border/50 bg-background/80 text-foreground/80 dark:bg-white/10 text-[11px] font-medium select-none shadow-2xs"
-                title="Total Portfolio Visits"
+                className="h-9 px-2 flex items-center gap-1.5 rounded-lg border border-border/50 bg-background/80 text-foreground/80 dark:bg-white/10 text-[11px] font-medium select-none shadow-2xs"
+                title="Genuine Live Views"
               >
                 <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                <Eye className="size-3 text-muted-foreground" />
-                <span className="tabular-nums font-semibold">{viewsCount.toLocaleString()}</span>
+                <img
+                  src="https://api.visitorbadge.io/api/visitors?path=vireshnagthane.vercel.app&label=VIEWS&countColor=%2310b981&labelColor=%2318181b"
+                  alt="Views"
+                  className="h-3.5 w-auto rounded"
+                />
               </div>
 
               {/* Square Theme Toggle Button */}
@@ -229,8 +237,8 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
                   <span>{formattedDateTime}</span>
                 </div>
                 <div className="flex items-center gap-1 font-sans">
-                  <Eye className="size-3.5 text-emerald-500" />
-                  <span>{viewsCount.toLocaleString()} views</span>
+                  <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  <span className="text-[11px] text-foreground font-medium">Session #{visitorSessionCount}</span>
                 </div>
               </div>
 

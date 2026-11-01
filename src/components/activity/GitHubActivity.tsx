@@ -11,7 +11,7 @@ interface GitHubActivityProps {
 export const GitHubActivity: React.FC<GitHubActivityProps> = ({ username = 'vireshnagthane' }) => {
   const [data, setData] = useState<GitHubActivityData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [selectedYear, setSelectedYear] = useState<string>('Last 12 Mos');
+  const [selectedYear, setSelectedYear] = useState<string>('2026');
 
   useEffect(() => {
     let isMounted = true;
@@ -34,7 +34,7 @@ export const GitHubActivity: React.FC<GitHubActivityProps> = ({ username = 'vire
     };
   }, [username]);
 
-  // Filter contributions by selected year
+  // Filter contributions by selected year with strict chronological order
   const filteredDays = useMemo<ContributionDay[]>(() => {
     if (!data || !data.contributions.length) return [];
 
@@ -42,10 +42,15 @@ export const GitHubActivity: React.FC<GitHubActivityProps> = ({ username = 'vire
       const oneYearAgo = new Date();
       oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
       const cutoff = oneYearAgo.toISOString().split('T')[0];
-      return data.contributions.filter((d) => d.date >= cutoff);
+      const today = new Date().toISOString().split('T')[0];
+      return data.contributions
+        .filter((d) => d.date >= cutoff && d.date <= today)
+        .sort((a, b) => a.date.localeCompare(b.date));
     }
 
-    return data.contributions.filter((d) => d.date.startsWith(selectedYear));
+    return data.contributions
+      .filter((d) => d.date.startsWith(selectedYear))
+      .sort((a, b) => a.date.localeCompare(b.date));
   }, [data, selectedYear]);
 
   // Compute total contributions for current selection
@@ -54,10 +59,10 @@ export const GitHubActivity: React.FC<GitHubActivityProps> = ({ username = 'vire
     if (selectedYear === 'Last 12 Mos') {
       return filteredDays.reduce((acc, curr) => acc + curr.count, 0);
     }
-    return data.total[selectedYear] || filteredDays.reduce((acc, curr) => acc + curr.count, 0);
+    return data.total[selectedYear] ?? filteredDays.reduce((acc, curr) => acc + curr.count, 0);
   }, [data, selectedYear, filteredDays]);
 
-  const yearTabs = ['Last 12 Mos', '2026', '2025', '2024'];
+  const yearTabs = ['2026', '2025', '2024', 'Last 12 Mos'];
 
   return (
     <div className="mt-7 relative z-10 rounded-2xl border p-4 sm:p-8 pt-8 sm:pt-8 bg-white/60 border-black/8 dark:bg-white/[0.02] dark:border-white/[0.08] backdrop-blur-sm">

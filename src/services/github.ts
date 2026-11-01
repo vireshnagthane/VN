@@ -45,9 +45,13 @@ export async function fetchGitHubContributions(username: string): Promise<GitHub
     // Extract available years
     const yearKeys = Object.keys(json.total || {}).sort((a, b) => Number(b) - Number(a));
 
+    const rawContributions: ContributionDay[] = json.contributions || [];
+    // Ensure all days are strictly ordered chronologically from earliest to latest
+    const sortedContributions = [...rawContributions].sort((a, b) => a.date.localeCompare(b.date));
+
     const data: GitHubActivityData = {
       total: json.total || {},
-      contributions: json.contributions || [],
+      contributions: sortedContributions,
       years: yearKeys.length > 0 ? yearKeys : ['2026', '2025', '2024'],
     };
 
@@ -66,28 +70,43 @@ export async function fetchGitHubContributions(username: string): Promise<GitHub
 function generateFallbackGitHubData(_username: string): GitHubActivityData {
   const contributions: ContributionDay[] = [];
   const total: { [year: string]: number } = {
-    '2026': 33,
+    '2026': 35,
     '2025': 0,
     '2024': 1,
   };
 
-  // Generate days for full years 2024, 2025, and 2026
+  const activeDays: Record<string, { count: number; level: 0 | 1 | 2 | 3 | 4 }> = {
+    '2024-09-27': { count: 1, level: 4 },
+    '2026-01-16': { count: 3, level: 3 },
+    '2026-01-17': { count: 2, level: 2 },
+    '2026-04-13': { count: 1, level: 1 },
+    '2026-04-14': { count: 3, level: 3 },
+    '2026-04-18': { count: 1, level: 1 },
+    '2026-04-25': { count: 3, level: 3 },
+    '2026-05-04': { count: 3, level: 3 },
+    '2026-07-27': { count: 1, level: 1 },
+    '2026-08-30': { count: 1, level: 1 },
+    '2026-09-01': { count: 2, level: 2 },
+    '2026-09-02': { count: 4, level: 4 },
+    '2026-09-07': { count: 1, level: 1 },
+    '2026-09-11': { count: 1, level: 1 },
+    '2026-09-17': { count: 2, level: 2 },
+    '2026-10-15': { count: 2, level: 2 },
+    '2026-10-19': { count: 3, level: 3 },
+    '2026-10-30': { count: 1, level: 1 },
+    '2026-10-31': { count: 1, level: 1 },
+  };
+
+  // Generate days for full years 2024, 2025, and 2026 chronologically
   const start = new Date('2024-01-01');
   const end = new Date('2026-12-31');
   const current = new Date(start);
 
   while (current <= end) {
     const dateStr = current.toISOString().split('T')[0];
-    let count = 0;
-    let level: 0 | 1 | 2 | 3 | 4 = 0;
-
-    if (dateStr === '2024-09-27') { count = 1; level = 4; }
-    else if (dateStr === '2026-01-16') { count = 3; level = 3; }
-    else if (dateStr === '2026-01-17') { count = 2; level = 2; }
-    else if (dateStr === '2026-04-14') { count = 3; level = 3; }
-    else if (dateStr === '2026-04-18') { count = 1; level = 1; }
-    else if (dateStr === '2026-09-06') { count = 4; level = 4; }
-    else if (dateStr === '2026-10-21') { count = 2; level = 2; }
+    const active = activeDays[dateStr];
+    const count = active ? active.count : 0;
+    const level = active ? active.level : 0;
 
     contributions.push({ date: dateStr, count, level });
     current.setDate(current.getDate() + 1);
