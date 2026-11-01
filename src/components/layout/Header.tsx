@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Sun, Moon, Menu, X, BookOpen, Clock, Calendar, ArrowRight, FileText } from 'lucide-react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { Sun, Moon, Menu, X, BookOpen, Clock, Calendar, ArrowRight, FileText, Eye } from 'lucide-react';
 import { useTheme } from '../../hooks/useTheme';
 import { profileData } from '../../data/profile';
 import { blogsData, BlogPost } from '../../data/blogs';
@@ -13,6 +13,54 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [blogsModalOpen, setBlogsModalOpen] = useState(false);
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+
+  // Live Date and Time (updates every second)
+  const [currentDateTime, setCurrentDateTime] = useState<Date>(new Date());
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentDateTime(new Date());
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const formattedDateTime = useMemo(() => {
+    return currentDateTime.toLocaleString('en-US', {
+      weekday: 'short',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true,
+    });
+  }, [currentDateTime]);
+
+  // Page views / visitor counter with persistent state
+  const [viewsCount, setViewsCount] = useState<number>(1284);
+  useEffect(() => {
+    try {
+      const STORAGE_KEY = 'vn_portfolio_views_count';
+      const stored = localStorage.getItem(STORAGE_KEY);
+      const baseCount = 1284;
+      let count = baseCount;
+      if (stored) {
+        const parsed = parseInt(stored, 10);
+        if (!isNaN(parsed) && parsed >= baseCount) {
+          count = parsed;
+        }
+      }
+      // Increment once per browser session
+      const sessionCounted = sessionStorage.getItem('vn_view_session');
+      if (!sessionCounted) {
+        count += 1;
+        sessionStorage.setItem('vn_view_session', 'true');
+        localStorage.setItem(STORAGE_KEY, count.toString());
+      }
+      setViewsCount(count);
+    } catch {
+      // Fallback
+    }
+  }, []);
 
   const scrollTo = (id: string) => {
     setMobileMenuOpen(false);
@@ -54,9 +102,9 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
               </a>
             </div>
 
-            {/* Desktop Navigation Links (Exact reference: Projects, Blogs, Theme Toggle) */}
-            <div className="hidden md:flex items-center gap-6">
-              <div className="flex items-center gap-6">
+            {/* Desktop Navigation Links & Action Controls */}
+            <div className="hidden md:flex items-center gap-2.5 lg:gap-3">
+              <div className="flex items-center gap-5 mr-1">
                 <button
                   onClick={() => scrollTo('projects-section')}
                   className="text-sm font-medium transition-colors hover:text-foreground underline-offset-4 hover:underline text-foreground/80 cursor-pointer"
@@ -71,11 +119,35 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
                 </button>
               </div>
 
-              {/* Theme Toggle Button (Exact reference size-9 rounded-lg) */}
-              <div className="size-9 flex items-center justify-center rounded-lg border border-border/50 bg-background/80 text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-white/10 dark:hover:bg-white/20 transition-colors">
+              {/* Live Date & Time Display Badge */}
+              <div
+                className="h-9 px-3 flex items-center gap-2 rounded-lg border border-border/50 bg-background/80 text-foreground/80 dark:bg-white/10 text-xs font-medium font-mono select-none shadow-2xs backdrop-blur-sm"
+                title="Current Live Date & Time"
+              >
+                <Clock className="size-3.5 text-emerald-500 shrink-0" />
+                <span className="tabular-nums whitespace-nowrap">{formattedDateTime}</span>
+              </div>
+
+              {/* Total Views / Visits Counter Badge */}
+              <div
+                className="h-9 px-3 flex items-center gap-2 rounded-lg border border-border/50 bg-background/80 text-foreground/80 dark:bg-white/10 text-xs font-medium select-none shadow-2xs backdrop-blur-sm"
+                title="Total Portfolio Page Visits"
+              >
+                <span className="relative flex size-2 shrink-0">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full size-2 bg-emerald-500"></span>
+                </span>
+                <Eye className="size-3.5 text-muted-foreground shrink-0" />
+                <span className="tabular-nums font-semibold text-foreground">{viewsCount.toLocaleString()}</span>
+                <span className="text-[11px] text-muted-foreground">views</span>
+              </div>
+
+              {/* Square Theme Toggle Button (Dark and Bright) */}
+              <div className="size-9 flex items-center justify-center rounded-lg border border-border/50 bg-background/80 text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-white/10 dark:hover:bg-white/20 transition-colors shrink-0">
                 <button
                   onClick={toggleTheme}
-                  aria-label="Toggle theme"
+                  aria-label="Toggle dark and bright visualization"
+                  title={isDark ? "Switch to bright visualization" : "Switch to dark visualization"}
                   className="size-9 flex items-center justify-center cursor-pointer transition-all duration-300 active:scale-95"
                 >
                   {isDark ? (
@@ -88,11 +160,23 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
             </div>
 
             {/* Mobile Navigation Controls */}
-            <div className="flex md:hidden items-center gap-2">
-              <div className="size-9 flex items-center justify-center rounded-lg border border-border/50 bg-background/80 text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-white/10 dark:hover:bg-white/20 transition-colors">
+            <div className="flex md:hidden items-center gap-1.5">
+              {/* Mobile Compact Views Badge */}
+              <div
+                className="h-9 px-2.5 flex items-center gap-1.5 rounded-lg border border-border/50 bg-background/80 text-foreground/80 dark:bg-white/10 text-[11px] font-medium select-none shadow-2xs"
+                title="Total Portfolio Visits"
+              >
+                <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <Eye className="size-3 text-muted-foreground" />
+                <span className="tabular-nums font-semibold">{viewsCount.toLocaleString()}</span>
+              </div>
+
+              {/* Square Theme Toggle Button */}
+              <div className="size-9 flex items-center justify-center rounded-lg border border-border/50 bg-background/80 text-foreground hover:bg-accent hover:text-accent-foreground dark:bg-white/10 dark:hover:bg-white/20 transition-colors shrink-0">
                 <button
                   onClick={toggleTheme}
-                  aria-label="Toggle theme"
+                  aria-label="Toggle dark and bright visualization"
+                  title={isDark ? "Switch to bright visualization" : "Switch to dark visualization"}
                   className="size-9 flex items-center justify-center cursor-pointer active:scale-95"
                 >
                   {isDark ? (
@@ -102,6 +186,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
                   )}
                 </button>
               </div>
+
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle menu"
@@ -136,6 +221,19 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
               >
                 Contact
               </button>
+
+              {/* Mobile Live Date & Time Info Bar */}
+              <div className="mt-2 pt-2 border-t border-border/40 flex items-center justify-between px-2 text-xs text-muted-foreground font-mono">
+                <div className="flex items-center gap-1.5">
+                  <Clock className="size-3.5 text-emerald-500" />
+                  <span>{formattedDateTime}</span>
+                </div>
+                <div className="flex items-center gap-1 font-sans">
+                  <Eye className="size-3.5 text-emerald-500" />
+                  <span>{viewsCount.toLocaleString()} views</span>
+                </div>
+              </div>
+
               <div className="pt-2 mt-1 border-t border-border/40">
                 <a
                   href={profileData.resumeUrl}

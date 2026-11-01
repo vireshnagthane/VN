@@ -298,12 +298,47 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Modal Body / PDF Viewer */}
-            <div className="flex-1 w-full bg-zinc-100 dark:bg-zinc-950 p-1.5 sm:p-4 overflow-hidden">
-              <iframe
-                src={`${profileData.resumeUrl}#toolbar=1&navpanes=0`}
-                title={`${profileData.name} Resume`}
+            <div className="flex-1 w-full bg-zinc-100 dark:bg-zinc-950 p-1.5 sm:p-4 overflow-hidden flex flex-col items-center justify-center min-h-[60vh]">
+              <object
+                data={`${profileData.resumeUrl}#toolbar=1&navpanes=0`}
+                type="application/pdf"
                 className="w-full h-[65vh] sm:h-[68vh] rounded-lg border border-border bg-white shadow-inner"
-              />
+              >
+                <iframe
+                  src={`${profileData.resumeUrl}#toolbar=1&navpanes=0`}
+                  title={`${profileData.name} Resume`}
+                  className="w-full h-full rounded-lg border border-border bg-white shadow-inner"
+                >
+                  <div className="p-8 text-center flex flex-col items-center justify-center h-full space-y-3">
+                    <FileText className="size-12 text-muted-foreground mx-auto" />
+                    <p className="text-sm font-medium text-foreground">
+                      Inline PDF preview is not supported by your browser.
+                    </p>
+                    <p className="text-xs text-muted-foreground max-w-sm mx-auto">
+                      Click below to open the complete resume in a new tab or download the PDF file directly.
+                    </p>
+                    <div className="flex gap-2 justify-center pt-2">
+                      <a
+                        href={profileData.resumeUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition-colors"
+                      >
+                        <ExternalLink className="size-3.5" />
+                        <span>Open PDF</span>
+                      </a>
+                      <a
+                        href={profileData.resumeUrl}
+                        download="VireshNagthane_Resume.pdf"
+                        className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-medium rounded-lg border border-border bg-background hover:bg-accent text-foreground transition-colors"
+                      >
+                        <Download className="size-3.5" />
+                        <span>Download</span>
+                      </a>
+                    </div>
+                  </div>
+                </iframe>
+              </object>
             </div>
           </div>
         </div>
