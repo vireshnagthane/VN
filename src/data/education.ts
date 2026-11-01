@@ -11,6 +11,7 @@ export interface EducationItem {
   skills: string[];
   description?: string;
   logoUrl?: string;
+  websiteUrl?: string;
 }
 
 export const educationData: EducationItem[] = [
@@ -23,6 +24,8 @@ export const educationData: EducationItem[] = [
     status: "Third Year Student",
     grade: "7.30 / 10 CGPA",
     location: "Kopargaon, Maharashtra, India",
+    logoUrl: "/assets/sanjivani-logo.png",
+    websiteUrl: "https://sanjivanicoe.org.in/",
     coursework: [
       "Data Structures and Algorithms",
       "Database Management Systems",
@@ -45,17 +48,16 @@ export const educationData: EducationItem[] = [
   {
     id: "indirabai-hsc",
     institution: "KAI INDIRABAI HIGHSCHOOL",
-    degree: "Senior Secondary (XII)",
+    degree: "Higher Secondary (HSC - XII)",
     fieldOfStudy: "Science Stream",
     period: "Completed 2024",
     status: "HSC Science",
-    grade: "81.00%",
+    grade: "81.40%",
     location: " Maharashtra",
     coursework: [
       "Physics",
       "Chemistry",
       "Mathematics",
-      "Computer Science",
       "English"
     ],
     skills: [
@@ -72,7 +74,7 @@ export const educationData: EducationItem[] = [
     period: "Completed 2022",
     status: "SSC Board",
     grade: "92.40%",
-    location: "Kopargaon, Maharashtra",
+    location: "Udgir, Maharashtra",
     coursework: [
       "Mathematics",
       "General Science",

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { GraduationCap, ChevronDown, ChevronUp, BookOpen } from 'lucide-react';
+import { GraduationCap, ChevronDown, ChevronUp, BookOpen, ExternalLink } from 'lucide-react';
 import { LinkedInIcon } from '../icons/SocialIcons';
 import { educationData } from '../../data/education';
 
@@ -36,11 +36,42 @@ export const EducationSection: React.FC = () => {
               <div className="size-1.5 rounded-full bg-emerald-500" />
             </div>
 
-            {/* Institution Title */}
+            {/* Institution Title with Official Logo & Redirect Link */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 mb-1">
-              <h3 className="font-space-grotesk text-base sm:text-lg font-semibold text-foreground">
-                {edu.institution}
-              </h3>
+              {edu.websiteUrl ? (
+                <a
+                  href={edu.websiteUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/inst inline-flex items-center gap-2 hover:opacity-90 transition-all cursor-pointer flex-wrap"
+                  title={`Visit official website of ${edu.institution}`}
+                >
+                  {edu.logoUrl && (
+                    <img
+                      src={edu.logoUrl}
+                      alt={`${edu.institution} Logo`}
+                      className="size-6 sm:size-7 rounded-md object-contain bg-white p-0.5 border border-black/10 dark:border-white/10 shadow-2xs shrink-0 group-hover/inst:scale-105 transition-transform"
+                    />
+                  )}
+                  <h3 className="font-space-grotesk text-base sm:text-lg font-semibold text-foreground group-hover/inst:text-emerald-600 dark:group-hover/inst:text-emerald-400 transition-colors">
+                    {edu.institution}
+                  </h3>
+                  <ExternalLink className="size-3.5 text-muted-foreground group-hover/inst:text-emerald-600 dark:group-hover/inst:text-emerald-400 transition-colors shrink-0" />
+                </a>
+              ) : (
+                <div className="flex items-center gap-2">
+                  {edu.logoUrl && (
+                    <img
+                      src={edu.logoUrl}
+                      alt={`${edu.institution} Logo`}
+                      className="size-6 sm:size-7 rounded-md object-contain bg-white p-0.5 border border-black/10 dark:border-white/10 shadow-2xs shrink-0"
+                    />
+                  )}
+                  <h3 className="font-space-grotesk text-base sm:text-lg font-semibold text-foreground">
+                    {edu.institution}
+                  </h3>
+                </div>
+              )}
               <span className="text-xs font-mono text-muted-foreground">{edu.period}</span>
             </div>
 
