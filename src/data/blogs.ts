@@ -48,7 +48,7 @@ export const blogsData: BlogPost[] = [
     readTime: "6 min read",
     status: "Draft / In Progress",
     date: "Aug 2026",
-    coverImage: "/projects/bus-tracking.png",
+    coverImage: "/projects/msrtc-bus-tracking.png",
     tags: ["Android", "IoT", "Cellular", "Transit"],
     contentExcerpt: "While urban transit benefits from continuous GPS telemetry and high-speed data, intercity routes in rural Maharashtra often pass through deep cellular dead zones. Our research explores whether pre-cached topology models and opportunistic SMS alerts can bridge this gap..."
   },

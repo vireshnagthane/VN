@@ -22,7 +22,7 @@ export const projectsData: Project[] = [
     category: "Web Development",
     shortDescription: "Neo-brutalist personal note vault for rapid capture, custom folder shelves, and instant 1-click clipboard sharing.",
     extendedDescription: "A minimalist knowledge vault enabling students and developers to capture instant thoughts, organize study materials into categorised shelves, and share dynamic lists effortlessly.",
-    thumbnail: "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1200&q=80",
+    thumbnail: "/projects/remanote.png",
     liveUrl: "https://remanote.vercel.app/",
     githubUrl: "https://github.com/vireshnagthane",
     technologies: ["React", "JavaScript", "HTML5", "Tailwind CSS", "Vercel"],
@@ -42,7 +42,7 @@ export const projectsData: Project[] = [
     category: "Data Science & Python",
     shortDescription: "Emergency hospital-to-donor matching web platform powered by Haversine spatial proximity algorithms directly in MySQL.",
     extendedDescription: "Integrates Haversine spatial logic in MySQL to calculate real-time donor distances, applying combined proximity and recency ranking with strict 90-day safe intervals.",
-    thumbnail: "https://images.unsplash.com/photo-1615461066841-6116e61058f4?auto=format&fit=crop&w=1200&q=80",
+    thumbnail: "/projects/smartblood.png",
     githubUrl: "https://github.com/vireshnagthane/SmartBlood-Emergency-System",
     technologies: ["Python", "Flask", "MySQL", "Haversine", "JavaScript"],
     keyFeatures: [
@@ -81,7 +81,7 @@ export const projectsData: Project[] = [
     category: "Web Development",
     shortDescription: "Lightweight digital learning management platform for course curriculum exploration and interactive study progress planning.",
     extendedDescription: "A modern, minimalist LMS developed to streamline academic planning, course tracking, and study task organization deployed live on Vercel.",
-    thumbnail: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1200&q=80",
+    thumbnail: "/projects/semd-lms.png",
     liveUrl: "https://studentlearningmanagementsystem-sigma.vercel.app/",
     githubUrl: "https://github.com/vireshnagthane/SEMD-LMS-SYSTEM",
     technologies: ["JavaScript", "HTML5", "CSS3", "DOM API", "Vercel"],
@@ -101,7 +101,7 @@ export const projectsData: Project[] = [
     category: "Android & Mobile",
     shortDescription: "Native Android app built with Kotlin and Cloud Firestore for student registration, lesson attendance, and fee tracking.",
     extendedDescription: "Replaces paper logbooks with cloud sync, real-time student attendance, license progress tracking, and interactive RTO practice quizzes.",
-    thumbnail: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=1200&q=80",
+    thumbnail: "/projects/mayur-driving-school.png",
     githubUrl: "https://github.com/vireshnagthane",
     technologies: ["Kotlin", "Android Studio", "Firebase Firestore", "Material Design"],
     keyFeatures: [
@@ -120,7 +120,7 @@ export const projectsData: Project[] = [
     category: "Systems & IoT",
     shortDescription: "Rural transit tracking concept using cellular tower triangulation and offline route caching without 4G/5G dependance.",
     extendedDescription: "Explores cellular tower triangulation, offline route matching via pre-cached timetable algorithms, and SMS crowdsourcing to estimate transit times.",
-    thumbnail: "/projects/bus-tracking.png",
+    thumbnail: "/projects/msrtc-bus-tracking.png",
     githubUrl: "https://github.com/vireshnagthane",
     technologies: ["Kotlin", "Android", "SQLite / Room", "Cellular APIs"],
     keyFeatures: [
@@ -158,7 +158,7 @@ export const projectsData: Project[] = [
     category: "Web Development",
     shortDescription: "Healthcare portal presenting clinical departments, emergency casualty helpline, and doctor consulting schedules.",
     extendedDescription: "Dedicated web portal conceptualized for patient access to department directories, consulting hours, and appointment inquiries.",
-    thumbnail: "https://images.unsplash.com/photo-1538108149393-fbbd81895907?auto=format&fit=crop&w=1200&q=80",
+    thumbnail: "/projects/saileela-hospital.png",
     githubUrl: "https://github.com/vireshnagthane",
     technologies: ["React", "JavaScript", "Tailwind CSS", "HTML5"],
     keyFeatures: [
